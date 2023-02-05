@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .form-container {
+            width: 500px;
+            padding: 20px;
+            margin: auto;
+            text-align: center;
+        }
+
+        label {
+            font-size: 20px;
+            font-weight: bold;
+        }
+		
+		label {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="password"] {
+            height: 40px;
+            width: 80%;
+            font-size: 20px;
+            padding: 5px;
+            margin: 5px;
+        }
+
+		#submit {
+            height: 40px;
+            width: 50%;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            border: none;
+        }
+
+        #submit:hover {
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+	<div class="form-container">
+        <h1>Login Page</h1>
+        <div class="error-message">{{ message }}</div>
+        <form action="{{url_for('login')}}" method="POST">
+            <label>User Name : </label><br>
+            <input id="username" name="username" type="text" placeholder="User Name" autocomplete="off" /><br>
+            <label>Password : </label><br>
+            <input id="password" name="password" type="password" placeholder="Password" autocomplete="off" /><br>
+            <br>
+            <button id="submit" name="submit">Sign in</button>
+        </form>
+        <p>Don't have an account? Please click <a href="{{url_for('registration')}}">here</a></p>
+    </div>
+</body>
+</html>
